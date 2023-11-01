@@ -9,8 +9,25 @@ date'''
     }
 
     stage('test') {
+      parallel {
+        stage('test') {
+          steps {
+            echo 'testing'
+          }
+        }
+
+        stage('test1') {
+          steps {
+            echo 'parallel testing'
+          }
+        }
+
+      }
+    }
+
+    stage('deploy') {
       steps {
-        echo 'testing'
+        echo 'deploying'
       }
     }
 
