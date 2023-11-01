@@ -5,6 +5,8 @@ pipeline {
       steps {
         sh '''pwd
 date'''
+        sh '''pwd 
+date'''
       }
     }
 
